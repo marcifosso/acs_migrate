@@ -1,0 +1,31 @@
+id: lcm_acs_xrm_import_membersdelete
+label: LCM ACS-XRM Migrate Import Membersdelete
+migration_group: lcm_acs_xrm
+migration_tags: 
+  - LCM 
+source:
+  create_record_number: 1
+  record_number_field: index
+  plugin: acs_importsource
+  path: '../eloquia/eloquia_membersdelete.csv'
+  header_row_count: 1
+  ids:
+    - EMAIL_ADDRESS
+process:
+  email: 
+    -
+      plugin: skip_on_empty
+      method: process
+      source: EMAIL_ADDRESS
+    -
+      plugin: acs_process_lowercase
+      method: process
+      source: EMAIL_ADDRESS
+  member_nr_13: MEMBER_NR_13
+  to_be_deleted: to_be_deleted
+destination:
+  plugin: acs_importdestination_membersdelete
+  batch: 10
+migration_dependencies: 
+  required:
+    - lcm_acs_xrm.settings

@@ -1,0 +1,6 @@
+lcm_acs_xrm.settings:
+  title: LCM ACS-XRM Settings
+  description: LCM ACS-XRM Settings
+  parent: system.admin_config_system
+  route_name: lcm_acs_xrm.settings
+  weight: 10

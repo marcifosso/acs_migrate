@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for lcm_acs_xrm module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function  lcm_acs_xrm_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.module_filter':
+      $output = '';
+      $output .= '<p>';
+      $output .= t('The modules is a Siebel-XRM to Acquia Campagain Studio migration helper.');
+      $output .= '</p>';
+      return $output;
+  }
+}

@@ -1,0 +1,55 @@
+id: lcm_acs_xrm_import_coverages
+label: LCM ACS-XRM Migrate Import Coverages
+migration_group: lcm_acs_xrm
+migration_tags: 
+  - LCM 
+source:
+  create_record_number: 1
+  record_number_field: index
+  plugin: acs_importsource
+  path: '../eloquia/eloquia_coverages.csv'
+  header_row_count: 1
+  ids:
+    - MEMBER_NR_13
+process:
+  cmdvcoverage: CMDV_COVERAGE
+  cmdvcoverageend: CMDV_COVERAGE_END
+  cmdvcoveragestart: CMDV_COVERAGE_START
+  dentopluscoverage: DENTO_PLUS_COVERAGE
+  dentopluscoverageend: DENTO_PLUS_COVERAGE_END
+  dentopluscoveragestart: DENTO_PLUS_COVERAGE_START	
+  forhoscoverage: FORHOS_COVERAGE
+  forhoscoverageend: FORHOS_COVERAGE_END
+  forhoscoveragestart: FORHOS_COVERAGE_START
+  hospifixcoverage: HOSPI_FIX_COVERAGE
+  hospifixcoverageend: HOSPI_FIX_COVERAGE_END
+  hospifixcoveragestart: HOSPI_FIX_COVERAGE_START
+  hospifixextracoverage: HOSPI_FIX_EXTRA_COVERAGE
+  hospifixextracoverageend: HOSPI_FIX_EXTRA_COVERAGE_END
+  hospifixextracoveragestart: HOSPI_FIX_EXTRA_COVERAGE_START
+  hospiplus100coverage: HOSPI_PLUS_100_COVERAGE
+  hospiplus100coverageend: HOSPI_PLUS_100_COVERAGE_END
+  hospiplus100coveragestart: HOSPI_PLUS_100_COVERAGE_START
+  hospiplus200coverage: HOSPI_PLUS_200_COVERAGE
+  hospiplus200coverageend: HOSPI_PLUS_200_COVERAGE_END
+  hospiplus200coveragestart: HOSPI_PLUS_200_COVERAGE_START
+  hospipluscoverage: HOSPI_PLUS_COVERAGE
+  hospipluscoverageend	: HOSPI_PLUS_COVERAGE_END
+  hospipluscoveragestart: HOSPI_PLUS_COVERAGE_START
+  hospisolidairecoverage: HOSPI_SOLIDAIRE_COVERAGE
+  hospisolidairecoverageend: HOSPI_SOLIDAIRE_COVERAGE_END	
+  hospisolidairecoveragestart: HOSPI_SOLIDAIRE_COVERAGE_START
+  hospitaalplancoverage: HOSPITAALPLAN_COVERAGE
+  hospitaalplancoverageend: HOSPITAALPLAN_COVERAGE_END
+  hospitaalplancoveragestart: HOSPITAALPLAN_COVERAGE_START
+  loaddt: LOAD_DT
+  medikoplancoverage: MEDIKOPLAN_COVERAGE
+  medikoplancoverageend: MEDIKOPLAN_COVERAGE_END
+  medikoplancoveragestart: MEDIKOPLAN_COVERAGE_START
+  membernr13: MEMBER_NR_13
+destination:
+  plugin: acs_importdestination_customobjects
+  custom_object: coverages
+migration_dependencies: 
+  required:
+    - lcm_acs_xrm.settings

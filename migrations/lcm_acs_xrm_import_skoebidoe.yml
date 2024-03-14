@@ -1,0 +1,63 @@
+id: lcm_acs_xrm_import_skoebidoe
+label: LCM ACS-XRM Migrate Import Skoebidoe
+migration_group: lcm_acs_xrm
+migration_tags: 
+  - LCM 
+source:
+  create_record_number: 1
+  record_number_field: index
+  plugin: acs_importsource
+  path: '../eloquia/eloquia_skoebidoe.csv'
+  header_row_count: 1
+  ids:
+    - MEMBER_NR_13
+process:																												
+  agechild1: AGE_CHILD1
+  agechild2: AGE_CHILD2
+  agechild3: AGE_CHILD3
+  agechild4: AGE_CHILD4
+  agechild5: AGE_CHILD5
+  agechild6: AGE_CHILD6
+  agechild7: AGE_CHILD7
+  agechild8: AGE_CHILD8
+  agechild9: AGE_CHILD9
+  agechild10: AGE_CHILD10
+  birthdate1: BIRTH_DATE1
+  birthdate2: BIRTH_DATE2
+  birthdate3: BIRTH_DATE3
+  birthdate4: BIRTH_DATE4
+  birthdate5: BIRTH_DATE5
+  birthdate6: BIRTH_DATE6
+  birthdate7: BIRTH_DATE7
+  birthdate8: BIRTH_DATE8
+  birthdate9: BIRTH_DATE9
+  birthdate10: BIRTH_DATE10
+  child1: CHILD1
+  child2: CHILD2
+  child3: CHILD3
+  child4: CHILD4
+  child5: CHILD5
+  child6: CHILD6
+  child7: CHILD7
+  child8: CHILD8
+  child9: CHILD9
+  child10: CHILD10
+  cmhealthinsurancefund: CM_HEALTH_INSURANCE_FUND
+  cmmember: CM_MEMBER
+  cmmembernr: CM_MEMBER_NR
+  creationdatecm: CREATION_DATE_CM
+  creationdatesk: CREATION_DATE_SK
+  email: EMAIL
+  emailoptin: EMAIL_OPTIN
+  firstname: FIRSTNAME
+  lastlogin: LAST_LOGIN
+  lastname: LASTNAME
+  numberofweekspregnant: NUMBER_OF_WEEKS_PREGNANT
+  phone: PHONE
+  suspectedbirthdate: SUSPECTED_BIRTH_DATE
+destination:
+  plugin: acs_importdestination_customobjects
+  custom_object: skoebidoe
+migration_dependencies: 
+  required:
+    - lcm_acs_xrm.settings

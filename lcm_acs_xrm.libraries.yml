@@ -1,0 +1,4 @@
+lcm_acs_xrm:
+  css:
+    component:
+      css/lcm-acs-xrm-settings.css: {}

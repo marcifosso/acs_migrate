@@ -1,0 +1,15 @@
+services:
+  lcm_acs_xrm.mautic_api:
+    class: Drupal\lcm_acs_xrm\Service\MauticApi
+    arguments:
+      - '@config.factory'
+      - '@http_client_factory'
+      
+  lcm_acs_xrm.sftp_client_factory:
+    class: '\Drupal\lcm_acs_xrm\Service\SftpClientFactory'
+
+  lcm_acs_xrm.sftp_client:
+    class: '\Drupal\lcm_acs_xrm\Service\SftpClient'
+    arguments: 
+     - '%sftp_hostname' 
+     - '%sftp_port'

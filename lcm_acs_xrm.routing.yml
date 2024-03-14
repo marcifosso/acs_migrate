@@ -1,0 +1,7 @@
+lcm_acs_xrm.settings:
+  path: '/admin/config/system/settings'
+  defaults:
+    _title: 'LCM ACS-XRM Settings'
+    _form: 'Drupal\lcm_acs_xrm\Form\SettingsForm'
+  requirements:
+    _permission: 'Administer lcm_acs_xrm'

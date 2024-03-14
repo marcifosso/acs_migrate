@@ -1,0 +1,73 @@
+id: lcm_acs_xrm_import_members
+label: LCM ACS-XRM Import Members
+migration_group: lcm_acs_xrm
+migration_tags: 
+  - LCM 
+source:
+  create_record_number: 1
+  record_number_field: index
+  plugin: acs_importsource
+  path: '../eloquia/eloquia_members50000.csv'
+  header_row_count: 1
+  ids:
+    - EMAIL_ADDRESS
+process:
+  birth_date: BIRTH_DATE
+  commune: COMMUNE
+  contact_first_name: CONTACT_FIRST_NAME
+  current_contract_start_da: CURRENT_CONTRACT_START_DATE
+  death_date: DEATH_DATE
+  dependency: DEPENDENCY
+  detention: DETENTION
+  email: 
+    plugin: skip_on_empty
+    method: process
+    source: EMAIL_ADDRESS
+  email_confirmed: EMAIL_CONFIRMED
+  employment_status: EMPLOYMENT_STATUS
+  familie: FAMILIE
+  firstname: CONTACT_FIRST_NAME
+  gender: GENDER
+  has_hospitalisation_insur:
+    plugin: str_replace
+    source: HAS_HOSPITALISATION_INSURANCE
+    search: ["N", "Y"]
+    replace: ["0", "1"]
+  house_index: HOUSE_INDEX
+  increased_child_allowance: INCREASED_CHILD_ALLOWANCE
+  kg: KG
+  kod304: KOD304
+  kod307: KOD307
+  kod312: KOD312
+  kod314: KOD314 
+  kod317: KOD317
+  land: LAND
+  language: LANGUAGE
+  lastname: NAME
+  leeftijd: LEEFTIJD
+  load_dt: LOAD_DT
+  marital_status: MARITAL_STATUS
+  member_nr_13: MEMBER_NR_13
+  member_nr: MEMBER_NR
+  mixed_family: MIXED_FAMILY
+  mutation_date: MUTATION_DATE
+  national_nr: NATIONAL_NR
+  nationaliteit: NATIONALITEIT
+  nr_of_kids: NR_OF_KIDS
+  nr: NR
+  omnio_entitled: OMNIO_ENTITLED
+  opt_in_cm_zine: OPT_IN_CM_ZINE
+  opt_in_general_info: OPT_IN_GENERAL_INFO
+  org_name: ORG_NAME
+  phone_number: PHONE_NUMBER
+  pobox: POBOX
+  street: STREET
+  wedding_date: WEDDING_DATE
+  zf: ZF
+  zip_code: ZIP_CODE
+destination:
+  plugin: acs_importdestination_members
+  batch: 1000
+migration_dependencies: 
+  required:
+    - lcm_acs_xrm.settings

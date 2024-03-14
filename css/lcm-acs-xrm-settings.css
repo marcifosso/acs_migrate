@@ -1,0 +1,26 @@
+.lcm-acs-xrm-settings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .lcm-acs-xrm-settings fieldset {
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+  
+  .lcm-acs-xrm-settings fieldset:nth-child(2n+1) {
+    margin-right: 20px; /* Adjust the margin between odd and even fieldsets */
+  }
+  
+  .lcm-acs-xrm-settings fieldset:nth-child(2n) {
+    margin-right: 0;
+  }
+  
+  @media (max-width: 300px) {
+    .lcm-acs-xrm-settings fieldset {
+      width: 100%;
+    }
+  }
+  

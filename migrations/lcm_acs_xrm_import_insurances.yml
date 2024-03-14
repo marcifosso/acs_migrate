@@ -1,0 +1,23 @@
+id: lcm_acs_xrm_import_insurances
+label: LCM ACS-XRM Migrate Import Insurances
+migration_group: lcm_acs_xrm
+migration_tags: 
+  - LCM 
+source:
+  create_record_number: 1
+  record_number_field: index
+  plugin: acs_importsource
+  path: '../eloquia/eloquia_insurances.csv'
+  header_row_count: 1
+  ids:
+    - EMAIL
+process:
+  email: EMAIL
+  date: DATE
+  stepnumber: STEP_NUMBER
+destination:
+  plugin: acs_importdestination_customobjects
+  custom_object: insurances
+migration_dependencies: 
+  required:
+    - lcm_acs_xrm.settings
